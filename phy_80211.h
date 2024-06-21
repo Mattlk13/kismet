@@ -416,13 +416,13 @@ public:
     // Strong constructor
     kis_80211_phy(int in_phyid);
 
-    uint64_t wpa_rsn_pairwise_conv(ie48_rsn_cipher cipher);
-    uint64_t wpa_rsn_group_conv(ie48_rsn_cipher cipher);
-    uint64_t wpa_rsn_auth_conv(ie48_rsn_mgmt cipher);
+    static uint64_t wpa_rsn_pairwise_conv(ie48_rsn_cipher cipher);
+    static uint64_t wpa_rsn_group_conv(ie48_rsn_cipher cipher);
+    static uint64_t wpa_rsn_auth_conv(ie48_rsn_mgmt cipher);
 
-    uint64_t wfa_pairwise_conv(ie221_wfa_cipher cipher);
-    uint64_t wfa_group_conv(ie221_wfa_cipher cipher);
-    uint64_t wfa_auth_conv(ie221_wfa_mgmt cipher);
+    static uint64_t wfa_pairwise_conv(ie221_wfa_cipher cipher);
+    static uint64_t wfa_group_conv(ie221_wfa_cipher cipher);
+    static uint64_t wfa_auth_conv(ie221_wfa_mgmt cipher);
 
 
     // Dot11 decoders, wep decryptors, etc
@@ -484,7 +484,7 @@ public:
 
     // Convert a frequency in KHz to an IEEE 80211 channel name; MAY THROW AN EXCEPTION
     // if this cannot be converted or is an invalid frequency
-    static const std::string khz_to_channel(const double in_khz);
+    static std::string khz_to_channel(const double in_khz);
 
     const std::string dot11_wpa_handshake_event = "DOT11_WPA_HANDSHAKE";
     const std::string dot11_wpa_handshake_event_base = "DOT11_WPA_HANDSHAKE_BASEDEV";
